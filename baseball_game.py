@@ -285,7 +285,9 @@ def main():
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
     user_input = input("Input guess number : ")
-    while int(user_input) != 0 : #0이 아니면 진행!
+    while True : #0이 아니면 진행!
+        if user_input.isdigit() and int(user_input) == 0:
+            break;
         if is_validated_number(user_input) : #입력값이 올바르게 입력됨
             result = get_strikes_or_ball(user_input, random_number) 
             print("Strikes : {0}, Balls : {1}".format(result[0], result[1]))
